@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Encuesta</title>
+    <link rel="stylesheet" href="results.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resultados de la Encuesta</h1>
+        </header>
+        <div class="logo">
+            <a href="./index.html">
+                <center>
+                    <img src="logo.png" alt="Logo">
+                </center>
+            </a>
+        </div>
+        
+        <div class="patient-info">
+            <h2>Pacientes y Puntuaciones</h2>
+            <table id="patient-scores">
+                <thead>
+                    <tr>
+                        <th>Nombre del Paciente</th>
+                        <th>Información de cobertura</th>
+                        <th>Información de internación</th>
+                        <th>Atención Médica</th>
+                        <th>Atención de Enfermería</th>
+                        <th>Cocina</th>
+                        <th>Comodidad</th>
+                        <th>Limpieza</th>
+                        <th>Servicios Generales</th>
+                        <th>Recomendación</th>
+                        <th>Comentarios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+            <center>
+                        
+        <div class="buttons">
+            <button onclick="fetchData('diario')">Diario</button>
+            <button onclick="fetchData('semanal')">Semanal</button>
+            <button onclick="fetchData('mensual')">Mensual</button>
+        </div>
+            </center>
+        </div>
+        
+        <div class="charts">
+            <div class="chart-container">
+                <h2>Gráfico de Torta</h2>
+                <canvas id="pie-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Gráfico de Columnas</h2>
+                <canvas id="bar-chart"></canvas>
+            </div>
+        </div>
+        
+        <div class="comments">
+            <h2>Comentarios Abiertos</h2>
+            <table id="comments-table">
+                <thead>
+                    <tr>
+                        <th>Nombre del Paciente</th>
+                        <th>Comentarios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        <a href="./index.html"><button>Volver al inicio</button></a>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; <span id="year"></span> Facundo M. Cercuetti - CEO de Futuro Digital Optimizaciones. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://wa.me/5493876344349?text=Me%20comunico%20por%20el%20bot%20del%20sanatorio%20necesito%20contactarme." target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.facebook.com/futuro.digital.2024" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook">
+                </a>
+                <a href="https://buymeacoffee.com/facucercueq/e/289470" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/coffee.png" alt="Donación">
+                    <span>¡Apóyanos con una donación!</span>
+                </a>
+            </div>
+            <p>Diseñado con <span class="heart">♥</span> por Futuro Digital Optimizaciones</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Actualizar el año automáticamente
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Function to convert score text to stars
+        function scoreToStars(scoreText) {
+            const normalizedScoreText = scoreText.toLowerCase();
+            let stars = '☆☆☆☆☆'; // Default to 0 stars
+        
+            switch (normalizedScoreText) {
+                case 'mala':
+                case 'malo':
+                    stars = '★☆☆☆☆';
+                    break;
+                case 'podría ser mejor':
+                case 'podria ser mejor':
+                    stars = '★★☆☆☆';
+                    break;
+                case 'bueno':
+                case 'buena':
+                    stars = '★★★☆☆';
+                    break;
+                case 'muy bueno':
+                case 'muy buena':
+                    stars = '★★★★☆';
+                    break;
+                case 'excelente':
+                    stars = '★★★★★';
+                    break;
+                case 'sí':
+                case 'si':
+                    stars = '★★★★★'; // Consider "sí" as 5 stars
+                    break;
+                case 'no':
+                    stars = '☆☆☆☆☆'; // Consider "no" as 0 stars
+                    break;
+                default:
+                    stars = '☆☆☆☆☆'; // Default to 0 stars for unknown values
+                    break;
+            }
+        
+            return stars;
+        }
+
+        // Function to fetch and display data based on the selected period
+        async function fetchData(period) {
+            const response = await fetch('respuestas.json');
+            const data = await response.json();
+            
+            const patientScoresTable = document.getElementById('patient-scores').getElementsByTagName('tbody')[0];
+            const commentsTable = document.getElementById('comments-table').getElementsByTagName('tbody')[0];
+            
+            // Clear previous data
+            patientScoresTable.innerHTML = '';
+            commentsTable.innerHTML = '';
+
+            data[period].forEach(entry => {
+                const patient = entry.patient;
+                const row = patientScoresTable.insertRow();
+                row.insertCell(0).innerText = patient.name;
+                row.insertCell(1).innerText = scoreToStars(patient['pregunta 1']);
+                row.insertCell(2).innerText = scoreToStars(patient['pregunta 2']);
+                row.insertCell(3).innerText = scoreToStars(patient['pregunta 3']);
+                row.insertCell(4).innerText = scoreToStars(patient['pregunta 4']);
+                row.insertCell(5).innerText = scoreToStars(patient['pregunta 5']);
+                row.insertCell(6).innerText = scoreToStars(patient['pregunta 6']);
+                row.insertCell(7).innerText = scoreToStars(patient['pregunta 7']);
+                row.insertCell(8).innerText = scoreToStars(patient['pregunta 8']);
+                row.insertCell(9).innerText = scoreToStars(patient['pregunta 9']);
+                row.insertCell(10).innerText = patient['Comentario o recomendación'];
+                
+                const commentRow = commentsTable.insertRow();
+                commentRow.insertCell(0).innerText = patient.name;
+                commentRow.insertCell(1).innerText = patient['Comentario o recomendación'];
+            });
+
+            // Update charts
+            updateCharts(data[period]);
+        }
+
+        function updateCharts(data) {
+            const questionLabels = ['cobertura', 'internación', 'Médicos', 'Enfermería', 'Cocina', 'Comodidad', 'Limpieza', 'Servicios Generales', 'Recomendación'];
+            const numQuestions = questionLabels.length;
+            const averages = Array(numQuestions).fill(0);
+            const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#C9CBCF', '#B2F8F7', '#C9C6FF'];
+
+            data.forEach(entry => {
+                const patient = entry.patient;
+                questionLabels.forEach((label, index) => {
+                    const score = patient[`pregunta ${index + 1}`];
+                    const percentage = scoreToStars(score).split('').filter(char => char === '★').length / 5 * 100;
+                    averages[index] += percentage;
+                });
+            });
+
+            for (let i = 0; i < numQuestions; i++) {
+                averages[i] /= data.length;
+            }
+
+            // Pie chart
+            const pieCtx = document.getElementById('pie-chart').getContext('2d');
+            new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: questionLabels,
+                    datasets: [{
+                        data: averages,
+                        backgroundColor: colors
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+
+            // Bar chart
+            const barCtx = document.getElementById('bar-chart').getContext('2d');
+            new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: questionLabels,
+                    datasets: [{
+                        label: 'Promedio de Evaluación',
+                        data: averages,
+                        backgroundColor: colors
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Fetch data for the default period
+        fetchData('diario');
+
+        function downloadResults() {
+            // Implement download functionality here
+            alert("Funcionalidad de descarga no implementada.");
+        }
+    </script>
+</body>
+</html>
+
+
+respuestas.json
+resultados.html
+results.css
+

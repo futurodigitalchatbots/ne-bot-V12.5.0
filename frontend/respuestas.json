@@ -1,0 +1,232 @@
+{
+  "diario": [
+    {
+      "date": "2024-08-14T08:30:00.000Z",
+      "patient": {
+        "name": "Juan Pérez",
+        "pregunta 1": "si",
+        "pregunta 2": "no",
+        "pregunta 3": "muy bueno",
+        "pregunta 4": "bueno",
+        "pregunta 5": "excelente",
+        "pregunta 6": "bueno",
+        "pregunta 7": "muy bueno",
+        "pregunta 8": "excelente",
+        "pregunta 9": "si",
+        "Comentario o recomendación": "Todo estuvo bien, gracias."
+      }
+    },
+    {
+      "date": "2024-08-14T10:00:00.000Z",
+      "patient": {
+        "name": "María Gómez",
+        "pregunta 1": "no",
+        "pregunta 2": "si",
+        "pregunta 3": "bueno",
+        "pregunta 4": "muy bueno",
+        "pregunta 5": "podría ser mejor",
+        "pregunta 6": "bueno",
+        "pregunta 7": "excelente",
+        "pregunta 8": "bueno",
+        "pregunta 9": "no",
+        "Comentario o recomendación": "El servicio de alimentación puede mejorar."
+      }
+    },
+    {
+      "date": "2024-08-14T12:30:00.000Z",
+      "patient": {
+        "name": "Facu Yanello",
+        "pregunta 1": "si",
+        "pregunta 2": "no",
+        "pregunta 3": "Mala",
+        "pregunta 4": "Mala",
+        "pregunta 5": "Mala",
+        "pregunta 6": "Mala",
+        "pregunta 7": "Mala",
+        "pregunta 8": "Mala",
+        "pregunta 9": "si",
+        "Comentario o recomendación": "dpapgkk"
+      }
+    },
+    {
+      "date": "2024-08-14T14:00:00.000Z",
+      "patient": {
+        "name": "Almaiti",
+        "pregunta 1": "si",
+        "pregunta 2": "no",
+        "pregunta 3": "Bueno",
+        "pregunta 4": "Bueno",
+        "pregunta 5": "Bueno",
+        "pregunta 6": "Bueno",
+        "pregunta 7": "Buena",
+        "pregunta 8": "Bueno",
+        "pregunta 9": "si",
+        "Comentario o recomendación": "nada"
+      }
+    },
+    {
+      "date": "2024-08-14T16:00:00.000Z",
+      "patient": {
+        "name": "Leo",
+        "pregunta 1": "si",
+        "pregunta 2": "si",
+        "pregunta 3": "Muy Bueno",
+        "pregunta 4": "Muy Bueno",
+        "pregunta 5": "muy Bueno",
+        "pregunta 6": "Muy Bueno",
+        "pregunta 7": "Muy Bueno",
+        "pregunta 8": "Muy Bueno",
+        "pregunta 9": "si",
+        "Comentario o recomendación": "hola"
+      }
+    },
+    {
+      "date": "2024-08-14T18:00:00.000Z",
+      "patient": {
+        "name": "Anto",
+        "pregunta 1": "si",
+        "pregunta 2": "si",
+        "pregunta 3": "Muy Bueno",
+        "pregunta 4": "Muy Bueno",
+        "pregunta 5": "Muy Bueno",
+        "pregunta 6": "Muy Bueno",
+        "pregunta 7": "Muy Bueno",
+        "pregunta 8": "Muy Bueno",
+        "pregunta 9": "si",
+        "Comentario o recomendación": "hola"
+      }
+    },
+    {
+      "date": "2024-08-14T20:00:00.000Z",
+      "patient": {
+        "name": "Anto",
+        "pregunta 1": "si",
+        "pregunta 2": "si",
+        "pregunta 3": "Muy Bueno",
+        "pregunta 4": "Bueno",
+        "pregunta 5": "Bueno",
+        "pregunta 6": "Bueno",
+        "pregunta 7": "Bueno",
+        "pregunta 8": "malo",
+        "pregunta 9": "si",
+        "Comentario o recomendación": "hola"
+      }
+    },
+    {
+      "date": "2024-08-14T22:00:00.000Z",
+      "patient": {
+        "name": "F.M.C.",
+        "pregunta 1": "si",
+        "pregunta 2": "si",
+        "pregunta 3": "muy bueno",
+        "pregunta 4": "mala",
+        "pregunta 5": "excelente",
+        "pregunta 6": "podría ser mejor",
+        "pregunta 7": "bueno",
+        "pregunta 8": "excelente",
+        "pregunta 9": "si",
+        "Comentario o recomendación": "recomiendo el uso mas actualizaciones digitales!"
+      }
+    }
+  ],
+  "semanal": [
+    {
+      "date": "2024-08-12T09:15:00.000Z",
+      "patient": {
+        "name": "Carlos Ramírez",
+        "pregunta 1": "si",
+        "pregunta 2": "si",
+        "pregunta 3": "excelente",
+        "pregunta 4": "muy bueno",
+        "pregunta 5": "bueno",
+        "pregunta 6": "bueno",
+        "pregunta 7": "muy bueno",
+        "pregunta 8": "excelente",
+        "pregunta 9": "si",
+        "Comentario o recomendación": "Muy satisfecho con la atención recibida."
+      }
+    },
+    {
+      "date": "2024-08-12T11:00:00.000Z",
+      "patient": {
+        "name": "Ana Torres",
+        "pregunta 1": "no",
+        "pregunta 2": "si",
+        "pregunta 3": "bueno",
+        "pregunta 4": "bueno",
+        "pregunta 5": "podría ser mejor",
+        "pregunta 6": "bueno",
+        "pregunta 7": "bueno",
+        "pregunta 8": "bueno",
+        "pregunta 9": "no",
+        "Comentario o recomendación": "El ambiente podría ser más agradable."
+      }
+    },
+    {
+      "date": "2024-08-12T13:30:00.000Z",
+      "patient": {
+        "name": "Pedro Sánchez",
+        "pregunta 1": "si",
+        "pregunta 2": "no",
+        "pregunta 3": "malo",
+        "pregunta 4": "bueno",
+        "pregunta 5": "bueno",
+        "pregunta 6": "muy bueno",
+        "pregunta 7": "malo",
+        "pregunta 8": "bueno",
+        "pregunta 9": "si",
+        "Comentario o recomendación": "La atención debe mejorar."
+      }
+    }
+  ],
+  "mensual": [
+    {
+      "date": "2024-08-05T11:30:00.000Z",
+      "patient": {
+        "name": "Lucía Fernández",
+        "pregunta 1": "si",
+        "pregunta 2": "no",
+        "pregunta 3": "bueno",
+        "pregunta 4": "bueno",
+        "pregunta 5": "excelente",
+        "pregunta 6": "muy bueno",
+        "pregunta 7": "excelente",
+        "pregunta 8": "muy bueno",
+        "pregunta 9": "si",
+        "Comentario o recomendación": "Recomendaría este sanatorio a otras personas."
+      }
+    },
+    {
+      "date": "2024-08-15T10:00:00.000Z",
+      "patient": {
+        "name": "José Martínez",
+        "pregunta 1": "no",
+        "pregunta 2": "si",
+        "pregunta 3": "bueno",
+        "pregunta 4": "malo",
+        "pregunta 5": "bueno",
+        "pregunta 6": "malo",
+        "pregunta 7": "bueno",
+        "pregunta 8": "bueno",
+        "pregunta 9": "no",
+        "Comentario o recomendación": "El servicio de emergencia necesita mejoras."
+      }
+    },
+    {
+      "date": "2024-08-20T14:00:00.000Z",
+      "patient": {
+        "name": "Carmen López",
+        "pregunta 1": "si",
+        "pregunta 2": "no",
+        "pregunta 3": "muy bueno",
+        "pregunta 4": "excelente",
+        "pregunta 5": "bueno",
+        "pregunta 6": "muy bueno",
+        "pregunta 7": "bueno",
+        "pregunta 8": "excelente",
+        "pregunta 9": "si",
+        "Comentario o recomendación": "Excelente atención, solo mejorar el tiempo de espera."
+      }
+    }
+  ]
+}

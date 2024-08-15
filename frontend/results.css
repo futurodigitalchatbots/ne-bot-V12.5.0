@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+
+
+h1, h2 {
+    color: #333;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.patient-info, .comments {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.patient-info table, .comments table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.patient-info th, .patient-info td, .comments th, .comments td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.patient-info th, .comments th {
+    background-color: #f4f4f4;
+}
+
+.charts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.chart-container {
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 15px;
+    background-color: #70b372;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    border-radius: 15px;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+footer p {
+    font-size: 16px;
+    margin: 0;
+}
+
+footer .social-links {
+    margin: 20px 0;
+}
+
+footer .social-links a {
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+footer .social-links img {
+    vertical-align: middle;
+}
+
+footer .social-links span {
+    color: #fff;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+footer .heart {
+    color: #e25555;
+}
+
+.logo img{
+    padding: 10px;
+    background-color: transparent; /* Color de fondo para la barra de navegación */
+    position: center;
+    height: 140px;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+}
+.button-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.button-container button img {
+    height: 30px; /* Ajusta el tamaño del botón según sea necesario */
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .charts {
+        flex-direction: column;
+    }
+
+    .chart-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .patient-info table, .comments table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .patient-info th, .patient-info td, .comments th, .comments td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .patient-info table, .comments table {
+        width: 100%;
+    }
+
+    .patient-info th, .patient-info td, .comments th, .comments td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}

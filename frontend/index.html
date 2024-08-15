@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin: auto;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 15px;
+            background-color: #70b372;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .qr {
+            margin: 20px 0;
+        }
+        .qr img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: opacity 1s ease-in-out;
+        }
+        .bot {
+            margin: 20px 0;
+        }
+        .bot img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            transition: opacity 1s ease-in-out;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .timer, .message {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Encuesta de Satisfacción de Internación</h1>
+        
+        <div class="centered">
+            <div class="timer" id="timer"></div>
+            <div class="message hidden" id="message"><h3>👉🏻🤳🏻 Por favor escanea el QR tienes 35 segundos ... 📲👇🏻</h3></div>
+            
+            <div class="qr" id="qr-code">
+                <!-- QR Code will be displayed here -->
+            </div>
+            
+            <div class="bot" id="bot">
+                <img src="bot.png" alt="Bot Image">
+            </div>
+        </div>
+        
+        <h2>Agregar Pacientes</h2>
+        <input type="text" id="patient-name" placeholder="Nombre del paciente">
+        <input type="text" id="patient-number" placeholder="Número de teléfono">
+        <button onclick="addPatient()">Agregar Paciente</button>
+        
+        <h2>Enviar Encuesta</h2>
+        <button onclick="sendSurvey()">Enviar Encuesta a Todos</button>
+        
+        <h2>Pacientes</h2>
+        <ul id="patient-list"></ul>
+
+        <a href="./resultados.html"><button>Ver Resultados</button></a>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
